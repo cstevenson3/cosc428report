@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  13 MAY 2021 03:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  13 MAY 2021 04:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -141,25 +141,23 @@ LaTeX Font Info:    ... okay on input line 3.
 
 
 ]
-No file report.bbl.
-[2
-
+(./report.bbl) [2
 
 ] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 1186 strings out of 480608
- 23082 string characters out of 5903630
- 259856 words of memory out of 5000000
- 17146 multiletter control sequences out of 15000+600000
- 562783 words of font info for 73 fonts, out of 8000000 for 9000
+ 1197 strings out of 480608
+ 23256 string characters out of 5903630
+ 264856 words of memory out of 5000000
+ 17154 multiletter control sequences out of 15000+600000
+ 563919 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,5n,19p,558b,155s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,5n,19p,1107b,155s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.e
 nc}</usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/l
 ocal/texlive/2020/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texl
 ive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/t
 exmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (2 pages, 37904 bytes).
+Output written on report.pdf (2 pages, 44791 bytes).
 PDF statistics:
  28 PDF objects out of 1000 (max. 8388607)
  19 compressed objects within 1 object stream
