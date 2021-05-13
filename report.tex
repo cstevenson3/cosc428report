@@ -48,6 +48,25 @@ Flood fill is used to find the pixels in each segment. A simple border walk is u
 
 The colour of segments are used as labels to generate map objects. Map objects have borders and a type (wall, floor etc.). For each object its border is triangulated. This uses a fairly simple approach of cycling around the border looking for valid triangles (counter-clockwise, not intersecting the border's edges, and not containing another border point). A valid triangle is added to the result. The polygons left over from removing this triangle are themselves triangulated recursively to find the remaining triangles. 
 
+
+\section{Results}
+
+\subsection{Setup}
+OS: macOS 10.13.4
+
+Processor: 2.4 GHz dual core I5-4258U
+
+IDE: Visual Studio Code
+
+Language: Python 3.7.2
+
+Device: PC
+
+Camera: 300dpi printer scanner (Deskjet 3070 B611)
+
+OpenCV Version: 4.5.1
+
+
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 
