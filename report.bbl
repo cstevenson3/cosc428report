@@ -39,6 +39,11 @@ R.~Smith, ``An overview of the tesseract ocr engine,'' in \emph{Ninth
   international conference on document analysis and recognition (ICDAR 2007)},
   vol.~2.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2007, pp. 629--633.
 
+\bibitem{pal2010handwritten}
+A.~Pal and D.~Singh, ``Handwritten english character recognition using neural
+  network,'' \emph{International Journal of Computer Science \& Communication},
+  vol.~1, no.~2, pp. 141--144, 2010.
+
 \bibitem{suzuki1985topological}
 S.~Suzuki \emph{et~al.}, ``Topological structural analysis of digitized binary
   images by border following,'' \emph{Computer vision, graphics, and image
