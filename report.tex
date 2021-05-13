@@ -13,6 +13,10 @@ abstract...
 
 \section{Introduction}
 
+\section{Background}
+\subsection{Text Detection and Recognition}
+Rosebrock \cite{rosebrock2018opencv} and others detail a method of detecting text bounding boxes with EAST, and recognising words with Tesseract. EAST is capable of detecting word and line text in natural backgrounds \cite{zhou2017east}. Tesseract \cite{smith2007overview} is Google's text recognition engine which maintains uncertainty throughout the letter recognition process until words are recognised. Feeding the bounding boxes found by EAST into Tesseract is usually a robust method of recognising font text in real images.
+
 \section{Proposed Method}
 \subsection{Segmentation}
 We aim to find the segments divided by pencil lines.

@@ -21,6 +21,24 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{rosebrock2018opencv}
+\BIBentryALTinterwordspacing
+A.~Rosebrock, ``Opencv ocr and text recognition with tesseract,'' 2018.
+  [Online]. Available:
+  \url{https://www.pyimagesearch.com/2018/09/17/opencv-ocr-and-text-recognition-with-tesseract/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{zhou2017east}
+X.~Zhou, C.~Yao, H.~Wen, Y.~Wang, S.~Zhou, W.~He, and J.~Liang, ``East: an
+  efficient and accurate scene text detector,'' in \emph{Proceedings of the
+  IEEE conference on Computer Vision and Pattern Recognition}, 2017, pp.
+  5551--5560.
+
+\bibitem{smith2007overview}
+R.~Smith, ``An overview of the tesseract ocr engine,'' in \emph{Ninth
+  international conference on document analysis and recognition (ICDAR 2007)},
+  vol.~2.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2007, pp. 629--633.
+
 \bibitem{suzuki1985topological}
 S.~Suzuki \emph{et~al.}, ``Topological structural analysis of digitized binary
   images by border following,'' \emph{Computer vision, graphics, and image
