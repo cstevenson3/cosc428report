@@ -19,6 +19,15 @@ Rosebrock \cite{rosebrock2018opencv} and others detail a method of detecting tex
 
 Methods exist for recognising handwritten characters from different people. Pal et al. \cite{pal2010handwritten} skeletonize characters and use neural networks to recognise characters. This method operates on images of single characters.
 
+General shape similarity methods may be applied, such as those found in Skiena's book \cite{skiena2020algorithm} Hamming distance of two shapes is how much area they don't overlap in when placed on top of each other. Hausdorff distance focusses on the place where 2 shapes differ the most, measuring the furthest distance you can be from one shape if you lie on any point in the other shape. Skeleton comparison reduces shapes to their core structure, then compares topology and length/angle features.
+
+\subsection{Polygon Simplifcation}
+
+The Douglas-Peucker algorithm \cite{douglas1973algorithms} for polygon simplification is additive. It begins with 2 points of the original polygon, and adds other points from the original polygon which are sufficiently far from the current approximation. Once every non-added point is sufficiently close to the approximation, it terminates.
+
+\subsection{Polygon Triangulation}
+Asano et al. \cite{asano1986polygon} demonstrate how collinearity of vertices can be used to minimise triangle count beyond n-2, at the cost of time complexity. Triangulation cannot be faster than sorting. 
+
 \section{Proposed Method}
 \subsection{Segmentation}
 We aim to find the segments divided by pencil lines.

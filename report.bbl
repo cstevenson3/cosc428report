@@ -44,6 +44,21 @@ A.~Pal and D.~Singh, ``Handwritten english character recognition using neural
   network,'' \emph{International Journal of Computer Science \& Communication},
   vol.~1, no.~2, pp. 141--144, 2010.
 
+\bibitem{skiena2020algorithm}
+S.~S. Skiena, \emph{The algorithm design manual}.\hskip 1em plus 0.5em minus
+  0.4em\relax Springer International Publishing, 2020.
+
+\bibitem{douglas1973algorithms}
+D.~H. Douglas and T.~K. Peucker, ``Algorithms for the reduction of the number
+  of points required to represent a digitized line or its caricature,''
+  \emph{Cartographica: the international journal for geographic information and
+  geovisualization}, vol.~10, no.~2, pp. 112--122, 1973.
+
+\bibitem{asano1986polygon}
+T.~Asano, T.~Asano, and R.~Y. Pinter, ``Polygon triangulation: Efficiency and
+  minimality,'' \emph{Journal of Algorithms}, vol.~7, no.~2, pp. 221--231,
+  1986.
+
 \bibitem{suzuki1985topological}
 S.~Suzuki \emph{et~al.}, ``Topological structural analysis of digitized binary
   images by border following,'' \emph{Computer vision, graphics, and image
