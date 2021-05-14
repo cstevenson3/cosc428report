@@ -21,6 +21,14 @@ Methods exist for recognising handwritten characters from different people. Pal 
 
 General shape similarity methods may be applied, such as those found in Skiena's book \cite{skiena2020algorithm} Hamming distance of two shapes is how much area they don't overlap in when placed on top of each other. Hausdorff distance focusses on the place where 2 shapes differ the most, measuring the furthest distance you can be from one shape if you lie on any point in the other shape. Skeleton comparison reduces shapes to their core structure, then compares topology and length/angle features.
 
+\subsection{Sketch Interpretation}
+
+Naya et al. \cite{naya2002direct} recognise the need for allowing users to sketch designs before converting them into computer models. Their proposal shows how sketched lines can be interpreted within certain tolerances to give digital representations. 
+
+Similarly Zargar et al. \cite{zargar2019introducing} interpret perspective sketches to generate 3D models.
+
+Yetiş et al. \cite{yetics2019auto} observe that freeform sketches generally rely on human experience to resolve ambiguities when interpreting their meaning. Also, discontinuities and irregularity in lines can cause imprecise models. They attempt to use deep learning in the 2D to 3D conversion, and it gets the basic outline of architectural sketches correct.
+
 \subsection{Polygon Simplifcation}
 
 The Douglas-Peucker algorithm \cite{douglas1973algorithms} for polygon simplification is additive. It begins with 2 points of the original polygon, and adds other points from the original polygon which are sufficiently far from the current approximation. Once every non-added point is sufficiently close to the approximation, it terminates.
