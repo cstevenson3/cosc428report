@@ -1,5 +1,10 @@
 \documentclass{IEEEtran}
 
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{caption}
+\usepackage{subcaption}
+
 \begin{document}
 
 \title{Automated Conversion of Sketches into Source Game Engine Maps}
@@ -89,6 +94,28 @@ Camera: 300dpi printer scanner (Deskjet 3070 B611)
 
 OpenCV Version: 4.5.1
 
+\subsection{Segmentation}
+
+I tested segmentation accuracy with Hamming distance, comparing against a manual segmentation. In proportion to the size of the image, there was an 8.0\% difference between the algorithmic segmentation and the manual segmentation. For reference two different manual segmentations had a 2.6\% difference. We can visually inspect Figure \ref{fig:segtest} to see that the algorithmic segmentation thickens non-walls and thins walls, which accounts for the larger difference.
+
+\begin{figure}[h]
+     \centering
+     \begin{subfigure}[b]{0.23\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{manualseg}
+         \caption{Manual Segmentation}
+         \label{fig:manualseg}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.23\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{outputseg}
+         \caption{Algorithmic Segmentation}
+         \label{fig:outputseg}
+     \end{subfigure}
+        \caption{A manual segmentation vs. the algorithmic segmentation}
+        \label{fig:segtest}
+\end{figure}
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
