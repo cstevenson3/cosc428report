@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  16 MAY 2021 03:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  16 MAY 2021 04:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -225,43 +225,106 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
+<./images/s1.png, id=1, 594.22pt x 400.49625pt>
+File: ./images/s1.png Graphic file (type png)
+<use ./images/s1.png>
+Package pdftex.def Info: ./images/s1.png  used on input line 56.
+(pdftex.def)             Requested size: 123.84283pt x 83.46503pt.
+<./images/s2.png, id=3, 571.13374pt x 389.455pt>
+File: ./images/s2.png Graphic file (type png)
+<use ./images/s2.png>
+Package pdftex.def Info: ./images/s2.png  used on input line 63.
+(pdftex.def)             Requested size: 123.84283pt x 84.44429pt.
 
 [1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]
-<./images/manualseg.png, id=10, 494.84875pt x 327.2225pt>
+ <./images/s1.png> <./images/s2.png>]
+<./images/t1.png, id=15, 618.31pt x 422.57875pt>
+File: ./images/t1.png Graphic file (type png)
+<use ./images/t1.png>
+Package pdftex.def Info: ./images/t1.png  used on input line 84.
+(pdftex.def)             Requested size: 123.84283pt x 84.63676pt.
+<./images/t2.png, id=16, 513.92pt x 374.39874pt>
+File: ./images/t2.png Graphic file (type png)
+<use ./images/t2.png>
+Package pdftex.def Info: ./images/t2.png  used on input line 91.
+(pdftex.def)             Requested size: 123.84283pt x 90.21744pt.
+<./images/t3.png, id=17, 522.95375pt x 342.27875pt>
+File: ./images/t3.png Graphic file (type png)
+<use ./images/t3.png>
+Package pdftex.def Info: ./images/t3.png  used on input line 97.
+(pdftex.def)             Requested size: 123.84283pt x 81.057pt.
+
+Underfull \hbox (badness 1953) in paragraph at lines 98--98
+[]\OT1/ptm/m/n/9 (c) |Con-fi-dence across mul-ti-ple
+ []
+
+<./images/t4.png, id=18, 562.1pt x 425.59pt>
+File: ./images/t4.png Graphic file (type png)
+<use ./images/t4.png>
+Package pdftex.def Info: ./images/t4.png  used on input line 104.
+(pdftex.def)             Requested size: 123.84283pt x 93.76645pt.
+
+Underfull \vbox (badness 3068) has occurred while \output is active []
+
+<./images/l1.png, id=19, 596.2275pt x 396.48125pt>
+File: ./images/l1.png Graphic file (type png)
+<use ./images/l1.png>
+Package pdftex.def Info: ./images/l1.png  used on input line 126.
+(pdftex.def)             Requested size: 123.84283pt x 82.34999pt.
+<./images/l2.png, id=20, 610.28pt x 420.57124pt>
+File: ./images/l2.png Graphic file (type png)
+<use ./images/l2.png>
+Package pdftex.def Info: ./images/l2.png  used on input line 133.
+(pdftex.def)             Requested size: 123.84283pt x 85.3449pt.
+<./images/l3.png, id=21, 490.83376pt x 324.21124pt>
+File: ./images/l3.png Graphic file (type png)
+<use ./images/l3.png>
+Package pdftex.def Info: ./images/l3.png  used on input line 139.
+(pdftex.def)             Requested size: 123.84283pt x 81.7996pt.
+<./images/l4.png, id=22, 493.845pt x 326.21875pt>
+File: ./images/l4.png Graphic file (type png)
+<use ./images/l4.png>
+Package pdftex.def Info: ./images/l4.png  used on input line 146.
+(pdftex.def)             Requested size: 123.84283pt x 81.80336pt.
+
+Underfull \vbox (badness 1077) has occurred while \output is active []
+
+ [2 <./images/t1.png> <./images/t2.png> <./images/t3.png> <./images/t4.png> <./
+images/l1.png> <./images/l2.png> <./images/l3.png> <./images/l4.png>]
+<./images/manualseg.png, id=34, 494.84875pt x 327.2225pt>
 File: ./images/manualseg.png Graphic file (type png)
 <use ./images/manualseg.png>
-Package pdftex.def Info: ./images/manualseg.png  used on input line 105.
+Package pdftex.def Info: ./images/manualseg.png  used on input line 188.
 (pdftex.def)             Requested size: 118.6778pt x 78.47508pt.
-<./images/outputseg.png, id=11, 494.84875pt x 327.2225pt>
+<./images/outputseg.png, id=35, 494.84875pt x 327.2225pt>
 File: ./images/outputseg.png Graphic file (type png)
 <use ./images/outputseg.png>
-Package pdftex.def Info: ./images/outputseg.png  used on input line 112.
+Package pdftex.def Info: ./images/outputseg.png  used on input line 195.
 (pdftex.def)             Requested size: 118.6778pt x 78.47508pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./images/ocrprior.png, id=12, 784.9325pt x 684.5575pt>
+<./images/ocrprior.png, id=36, 784.9325pt x 684.5575pt>
 File: ./images/ocrprior.png Graphic file (type png)
 <use ./images/ocrprior.png>
-Package pdftex.def Info: ./images/ocrprior.png  used on input line 130.
+Package pdftex.def Info: ./images/ocrprior.png  used on input line 213.
 (pdftex.def)             Requested size: 206.39685pt x 179.99672pt.
-<./images/textrec.png, id=14, 785.93625pt x 686.565pt>
+<./images/textrec.png, id=37, 785.93625pt x 686.565pt>
 File: ./images/textrec.png Graphic file (type png)
 <use ./images/textrec.png>
-Package pdftex.def Info: ./images/textrec.png  used on input line 137.
+Package pdftex.def Info: ./images/textrec.png  used on input line 220.
 (pdftex.def)             Requested size: 206.39685pt x 180.2941pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 145.
+(Font)              <7> on input line 228.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 145.
-[2] (./report.bbl
+(Font)              <5> on input line 228.
+(./report.bbl
 Underfull \hbox (badness 3078) in paragraph at lines 26--30
 []\OT1/ptm/m/n/8 A. Rose-brock, ``Opencv ocr and text recog-
  []
@@ -271,28 +334,30 @@ Underfull \hbox (badness 4832) in paragraph at lines 26--30
 \OT1/ptm/m/n/8 ni-tion with tesser-act,'' 2018. [On-line]. Avail-
  []
 
-) [3 <./images/manualseg.png> <./images/outputseg.png (PNG copy)> <./images/ocr
-prior.png> <./images/textrec.png>] (./report.aux) ) 
+[3 <./images/manualseg.png> <./images/outputseg.png (PNG copy)> <./images/ocrpr
+ior.png> <./images/textrec.png>]) [4
+
+] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 3189 strings out of 480608
- 55913 string characters out of 5903630
- 301227 words of memory out of 5000000
- 19101 multiletter control sequences out of 15000+600000
+ 3282 strings out of 480608
+ 57117 string characters out of 5903630
+ 300227 words of memory out of 5000000
+ 19194 multiletter control sequences out of 15000+600000
  564997 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,42p,1107b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/tex
-mf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1
-/urw/times/utmb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times
-/utmbi8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.p
-fb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (3 pages, 2349022 bytes).
+ 41i,7n,42p,1155b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.e
+nc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+/usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local
+/texlive/2020/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/
+2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf
+-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on report.pdf (4 pages, 3460370 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 73 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
