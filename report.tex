@@ -10,11 +10,11 @@
 \title{Automated Conversion of Sketches into Source Game Engine Maps}
 \author{Cameron Stevenson}
  
+ \maketitle
+ 
 \begin{abstract}
 abstract...
 \end{abstract}
-
-\maketitle
 
 \section{Introduction}
 
@@ -96,7 +96,7 @@ OpenCV Version: 4.5.1
 
 \subsection{Segmentation}
 
-I tested segmentation accuracy with Hamming distance, comparing against a manual segmentation. In proportion to the size of the image, there was an 8.0\% difference between the algorithmic segmentation and the manual segmentation. For reference two different manual segmentations had a 2.6\% difference. We can visually inspect Figure \ref{fig:segtest} to see that the algorithmic segmentation thickens non-walls and thins walls, which accounts for the larger difference.
+Segmentation accuracy was tested with Hamming distance, comparing against a manual segmentation. In proportion to the size of the image, there was an 8.0\% difference between the algorithmic segmentation and the manual segmentation. For reference two different manual segmentations had a 2.6\% difference. We can visually inspect Figure \ref{fig:segtest} to see that the algorithmic segmentation thickens non-walls and thins walls, which accounts for the larger difference.
 
 \begin{figure}[h]
      \centering
@@ -110,11 +110,36 @@ I tested segmentation accuracy with Hamming distance, comparing against a manual
      \begin{subfigure}[b]{0.23\textwidth}
          \centering
          \includegraphics[width=\textwidth]{outputseg}
-         \caption{Algorithmic Segmentation}
+         \caption{Our Segmentation}
          \label{fig:outputseg}
      \end{subfigure}
-        \caption{A manual segmentation vs. the algorithmic segmentation}
+        \caption{Segmentation comparison}
         \label{fig:segtest}
+\end{figure}
+
+A better solution would treat the pencil filling stage as a closing operation rather than just a dilation.
+
+\subsection{Text Recognition}
+
+The commonly described EAST + Tesseract method detects 90\% of double characters but only recognises 30\% of them due to its dependency on recognising complete words. Our method using sample template matching detects and recognises 100\% of double characters, with no false detections on other lines. For a comparison see Figure \ref{fig:texttest}.
+
+\begin{figure}[h]
+     \centering
+     \begin{subfigure}[b]{0.4\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{ocrprior}
+         \caption{Common OCR Method}
+         \label{fig:ocrprior}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.4\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{textrec}
+         \caption{Our Sample Recognition}
+         \label{fig:textrec}
+     \end{subfigure}
+        \caption{Text detection and recognition}
+        \label{fig:texttest}
 \end{figure}
 
 \bibliographystyle{IEEEtran}
