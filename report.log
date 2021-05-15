@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  16 MAY 2021 02:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  16 MAY 2021 03:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -257,7 +257,11 @@ Package pdftex.def Info: ./images/textrec.png  used on input line 137.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(./report.bbl
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 145.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 145.
+[2] (./report.bbl
 Underfull \hbox (badness 3078) in paragraph at lines 26--30
 []\OT1/ptm/m/n/8 A. Rose-brock, ``Opencv ocr and text recog-
  []
@@ -267,29 +271,28 @@ Underfull \hbox (badness 4832) in paragraph at lines 26--30
 \OT1/ptm/m/n/8 ni-tion with tesser-act,'' 2018. [On-line]. Avail-
  []
 
-[2]) [3 <./images/manualseg.png> <./images/outputseg.png (PNG copy)> <./images/
-ocrprior.png> <./images/textrec.png>] (./report.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+) [3 <./images/manualseg.png> <./images/outputseg.png (PNG copy)> <./images/ocr
+prior.png> <./images/textrec.png>] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 3187 strings out of 480608
- 55885 string characters out of 5903630
+ 3189 strings out of 480608
+ 55913 string characters out of 5903630
  301227 words of memory out of 5000000
- 19099 multiletter control sequences out of 15000+600000
+ 19101 multiletter control sequences out of 15000+600000
  564997 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,7n,42p,1107b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/202
-0/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2020/texmf-d
-ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/
-type1/urw/times/utmri8a.pfb>
-Output written on report.pdf (3 pages, 2324545 bytes).
+{/usr/local/texlive/2020/tex
+mf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1
+/urw/times/utmb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times
+/utmbi8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.p
+fb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on report.pdf (3 pages, 2349022 bytes).
 PDF statistics:
- 38 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
+ 50 PDF objects out of 1000 (max. 8388607)
+ 31 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
