@@ -1,4 +1,4 @@
-\documentclass{IEEEtran}
+\documentclass[11pt]{IEEEtran}
 
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
@@ -13,7 +13,7 @@
  \maketitle
  
 \begin{abstract}
-abstract...
+This paper proposes a method to automatically generate Source game engine maps from hand sketched layouts. Segmentation is achieved through adaptive thresholding and flood fill, with an 8\% difference from a reference segmentation. Text recognition is achieved through squared difference template matching, with 100\% detection and recognition and no false detections. A compilable and playable CS:GO map is generated.
 \end{abstract}
 
 \section{Introduction}
@@ -38,10 +38,17 @@ Yetiş et al. \cite{yetics2019auto} observe that freeform sketches generally rel
 
 \subsection{Polygon Simplifcation}
 
+Polygons sourced from real life data (such as a photo scan) can have more points representing them than realistically necessary. Polygon simplification adds, removes or modifies vertices to produce a similar enough polygon with much fewer vertices.
+
 The Douglas-Peucker algorithm \cite{douglas1973algorithms} for polygon simplification is additive. It begins with 2 points of the original polygon, and adds other points from the original polygon which are sufficiently far from the current approximation. Once every non-added point is sufficiently close to the approximation, it terminates.
 
 \subsection{Polygon Triangulation}
-Asano et al. \cite{asano1986polygon} demonstrate how collinearity of vertices can be used to minimise triangle count beyond n-2, at the cost of time complexity. Triangulation cannot be faster than sorting. 
+
+Many applications use triangles as primitives, so breaking down a polygon into triangles is useful.
+
+A typical triangulation has $n-2$ triangles for $n$ vertices. Asano et al. \cite{asano1986polygon} demonstrate how collinearity of vertices can be used to minimise triangle count beyond $n-2$, at the cost of time complexity. Triangulation cannot be faster than sorting. 
+
+Shewchuk's Triangle \cite{shewchuk2005two} creates Delaunay triangulations, optionally with no large or small angles. Delaunay triangulations spread out triangles fairly evenly throughout the polygon.
 
 \subsection{Valve Map Format}
 
@@ -266,11 +273,11 @@ The white rectangle used to cover up text can be made more precise if needed in 
 
 \subsection{Border Simplication and Triangulation}
 
-Currently we border march every pixel to find an exact border, then simplify it separately. Approaches exist to border march multiple pixels at a time, effectively combining these two steps into one. Pu et al. \cite{pu2008adaptive} propose adaptive border marching to dynamically choose step sizes whilst marching around a border. Step sizes are made smaller if a larger step excludes a sufficiently large concavity or protrusion. This method retains necessary details whilst reducing vertex count.
+Currently we border march every pixel to find an exact border, then simplify it separately. Approaches exist to border march multiple pixels at a time, effectively combining these two steps into one. Pu et al. \cite{pu2008adaptive} propose adaptive border marching to dynamically choose step sizes whilst marching around a border. Step sizes are made smaller if a larger step excludes a sufficiently large concavity or protrusion. This method retains necessary details whilst reducing vertex count. Alternatively we could keep the current 2 step algorithm and implement Douglas-Peucker \cite{douglas1973algorithms} for simplication.
 
 Segments are currently allowed to become larger during border simplification, which overlaps brushes from different objects in the map. This is good for gameplay as there are no gaps, but it may cause unforeseen problems with the visibility algorithm or other parts of map compilation. The border simplification could be adjusted into a global algorithm, where adjacent borders share the same vertices, and removing or moving vertices applies to any segments using them in their border. So borders end up perfectly joined between segments, and brushes align perfectly in the map.
 
-Donut topology (holes in the middle of segments) are not accounted for in the current program. As a cheap fix the outer wall has a pixel of black drawn through it to break up the donut, but internal segments are still vulnerable to the issue if a user draws an object with donut topology. An accurate fix would be to find holes in segments and record them as internal borders, simplify these borders the same as the external border, then use a triangulation algorithm which can cope with internal borders. For example Triangle by Johnathan Shewchuk \cite{shewchuk2005two}. A cheaper fix would be to detect holes in segments, then split the segment in two, and recursively fix holes in the two new segments produced, until there are no holes remaining.
+Donut topology (holes in the middle of segments) are not accounted for in the current program. As a cheap fix the outer wall has a pixel of black drawn through it to break up the donut, but internal segments are still vulnerable to the issue if a user draws an object with donut topology. An accurate fix would be to find holes in segments and record them as internal borders, simplify these borders the same as the external border, then use a triangulation algorithm which can cope with internal borders. For example Shewchuk's Triangle \cite{shewchuk2005two}. A cheaper fix would be to detect holes in segments, then split the segment in two, and recursively fix holes in the two new segments produced, until there are no holes remaining.
 
 \subsection{Other Features}
 
