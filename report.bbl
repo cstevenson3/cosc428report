@@ -73,6 +73,13 @@ T.~Asano, T.~Asano, and R.~Y. Pinter, ``Polygon triangulation: Efficiency and
   minimality,'' \emph{Journal of Algorithms}, vol.~7, no.~2, pp. 221--231,
   1986.
 
+\bibitem{shewchuk2005two}
+\BIBentryALTinterwordspacing
+J.~Shewchuk, ``Triangle: A two-dimensional quality mesh generator and delaunay
+  triangulator,'' 2005. [Online]. Available:
+  \url{http://www.cs.cmu.edu/\~quake/triangle.html}
+\BIBentrySTDinterwordspacing
+
 \bibitem{valve2006vmf}
 \BIBentryALTinterwordspacing
 V.~Authors, ``Valve map format,'' 2006. [Online]. Available:
@@ -95,12 +102,5 @@ J.~Pu, J.~Roos, A.~Y. Chin, S.~Napel, G.~D. Rubin, and D.~S. Paik, ``Adaptive
   border marching algorithm: automatic lung segmentation on chest ct images,''
   \emph{Computerized Medical Imaging and Graphics}, vol.~32, no.~6, pp.
   452--462, 2008.
-
-\bibitem{shewchuk2005two}
-\BIBentryALTinterwordspacing
-J.~Shewchuk, ``Triangle: A two-dimensional quality mesh generator and delaunay
-  triangulator,'' 2005. [Online]. Available:
-  \url{http://www.cs.cmu.edu/\~quake/triangle.html}
-\BIBentrySTDinterwordspacing
 
 \end{thebibliography}

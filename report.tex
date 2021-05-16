@@ -27,7 +27,7 @@ Rosebrock \cite{rosebrock2018opencv} and others detail a method of detecting tex
 
 Methods exist for recognising handwritten characters from different people. Pal et al. \cite{pal2010handwritten} skeletonize characters and use neural networks to recognise characters. This method operates on images of single characters.
 
-General shape similarity methods may be applied, such as those found in Skiena's book \cite{skiena2020algorithm} Hamming distance of two shapes is how much area they don't overlap in when placed on top of each other. Hausdorff distance focusses on the place where 2 shapes differ the most, measuring the furthest distance you can be from one shape if you lie on any point in the other shape. Skeleton comparison reduces shapes to their core structure, then compares topology and length/angle features.
+General shape similarity methods may be applied, such as those found in Skiena's book \cite{skiena2020algorithm}. Hamming distance of two shapes is how much they don't overlap in area when placed on top of each other. Hausdorff distance focusses on the place where 2 shapes differ the most, measuring the furthest distance you can be from one shape if you lie on the furthest point in the other shape. Skeleton comparison reduces shapes to their core structure, then compares topology and length/angle features.
 
 \subsection{Sketch Interpretation}
 
@@ -39,9 +39,11 @@ Yetiş et al. \cite{yetics2019auto} observe that freeform sketches generally rel
 
 \subsection{Polygon Simplifcation}
 
-Polygons sourced from real life data (such as a photo scan) can have more points representing them than realistically necessary. Polygon simplification adds, removes or modifies vertices to produce a similar enough polygon with much fewer vertices.
+Polygons sourced from real life data (such as a photo scan) can have more points representing them than practically necessary. Polygon simplification adds, removes or modifies vertices to produce a similar enough polygon with much fewer vertices.
 
 The Douglas-Peucker algorithm \cite{douglas1973algorithms} for polygon simplification is additive. It begins with 2 points of the original polygon, and adds other points from the original polygon which are sufficiently far from the current approximation. Once every non-added point is sufficiently close to the approximation, it terminates.
+
+Other techniques subtract points from low area or large angle triangles along the polygon.
 
 \subsection{Polygon Triangulation}
 
@@ -51,9 +53,18 @@ A typical triangulation has $n-2$ triangles for $n$ vertices. Asano et al. \cite
 
 Shewchuk's Triangle \cite{shewchuk2005two} creates Delaunay triangulations, optionally with no large or small angles. Delaunay triangulations spread out triangles fairly evenly throughout the polygon.
 
-\subsection{Valve Map Format}
+\subsection{Valve Maps}
 
-Valve Map Format \cite{valve2006vmf} describes the structure of an editable map file. It has a key-value and nested structure similar to JSON. Of particular interest is the brush, referred to as "solid" in this wiki. A brush is a convex 3D shape, defined by a number of sides making up its shape within them. Each side is a plane, and where these planes intersect create the vertices and edges of the brush.
+Valve Map Format \cite{valve2006vmf} describes the structure of an editable map file. It has a key-value structure with nesting, similar to JSON. Of particular interest is the brush, referred to as "solid" in this wiki. A brush is a convex 3D shape, defined by a number of sides making up its shape within them. Each side is a plane, and where these planes intersect create the vertices and edges of the brush.
+
+CS:GO maps tend to have 1 buyzone for each team (and player spawns), 1-3 bombsites, floors connecting main areas, walls dividing main areas, and a skybox surrounding the map. I have coloured the segmented sketch as follows (see Figure \ref{fig:segtest} for an example).
+\begin{itemize}
+\item Green: Floor
+\item Red: Wall
+\item Yellow: Bombsites
+\item Blue: CT Spawn
+\item Orange: T Spawn
+\end{itemize}
 
 \section{Proposed Method}
 \subsection{Segmentation}
@@ -83,13 +94,39 @@ Now that black segments are divided by solid white boundaries, flood fill is use
 \end{figure}
 
 \subsection{Text Recognition}
-Short handwritten text is used to label segments based on what they will be in a map (floors, walls etc.). We aim to locate text precisely enough for labelling, and recognise the handwritten letters. 
+Short handwritten text is used to label segments based on what they will be in the map (floors, walls etc.). We aim to locate text precisely enough for labelling, and recognise the handwritten letters. 
 
-The common method of detecting text with EAST and recognising text with Tesseract was tried. It was found to work best with longer words and a background without other pencil. Our application requires short labels (up to 2 letters at most) and text near other pencil, so this approach was unsuitable.
+The common method of detecting text with EAST and recognising text with Tesseract was tried. It was found to work best with longer words. On single letters and 2 letter words it was unreliable. Our application requires short labels (up to 2 letters at most), so this approach was unsuitable.
 
-Instead convolution methods were tried. Inverted samples of handwritten letters were turned into kernels of various scales and convolved over the inverted image, with the idea being that highlights in the output showed presence of the letter. This detected well, but structural features in the sketches were also detected as text. Convolution by its definition rewards white overlap but does not reward black overlap, and does not explicitly punish opposites. For example a solid block of pencil would be detected as any sampled letter. A more specific sort of convolution is needed.
+Instead convolution methods were tried. Inverted samples of handwritten letters were turned into kernels of various scales and convolved over the inverted image, with the idea being that highlights in the output showed presence of the letter. This detected well, but structural features in the sketches were also detected as text. Convolution by its definition rewards white overlap but does not reward black overlap, and does not explicitly punish opposites. For example a solid rectangle of pencil would be detected as any sampled letter. A more specific sort of convolution is needed.
 
-Template matching gives us the specificity needed by rewarding pixel similarity and punishing dissimilarity. Squared difference template matching was used with the sampled letters at various scales over the image, to produce a mostly whitish image with black spots where letters are found. This is inverted and thresholded so that only confident highlights are retained. These highlights from all scales are merged into one image (as a weighted average where every scale has the same weight). It was found that each true highlight tends to appear on multiple scales, so thresholding this merged image retains these and discards some random highlights. Suzuki et al. \cite{suzuki1985topological} contour finding algorithm is used to find the location of remaining highlights. As a further step of narrowing down true highlights, on the sketch we use double letters as labels (e.g. "XX"). So we look for pairs of highlights within a certain distance and angle range. The midpoint of each pair and the letter is recorded. This gives us the text label letters and locations. Figure \ref{fig:text} shows this whole process.
+\begin{figure}[h]
+     \centering
+     \begin{subfigure}[b]{0.15\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{tem1}
+         \caption{A single sample of the letter X}
+         \label{fig:tem1}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.15\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{tem2}
+         \caption{Multiple samples averaged}
+         \label{fig:tem2}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.15\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{tem3}
+         \caption{Template used in template matching}
+         \label{fig:tem3}
+     \end{subfigure}
+     \hfill
+        \caption{Template for the letter X}
+        \label{fig:tem}
+\end{figure}
+
+Template matching gives us the specificity needed by rewarding pixel similarity and punishing dissimilarity. Squared difference template matching was used with the sampled letters at various scales over the image, to produce a mostly whitish image with black spots where letters are found. An example template is shown in Figure \ref{fig:tem}. This is inverted and thresholded so that only confident highlights are retained. These highlights from all scales are merged into one image (as a weighted average where every scale has the same weight). It was found that each true highlight tends to appear on multiple scales, so thresholding this merged image retains these and discards some random highlights. Suzuki et al. \cite{suzuki1985topological} contour finding algorithm is used to find the location of remaining highlights. As a further step of narrowing down true highlights, on the sketch we use double letters as labels (e.g. "XX"). So we look for pairs of highlights within a certain distance and angle range. The midpoint of each pair and the letter is recorded. This gives us the text label letters and locations. Figure \ref{fig:text} shows this process.
 
 \begin{figure}[h]
      \centering
@@ -169,7 +206,7 @@ We want to fill in the black gaps left by pencil marks, both between segments (i
 
 We aim to find the border of each coloured segment, simplify it, and triangulate it to make brushes for the map file. This section operates independently of the prior sketch processing so that computer drawn images can be used.
 
-Flood fill is used to find the pixels in each segment. A simple border walk is used to find the exact pixel by pixel border. Borders are simplified with a tolerance as a proportion of the area of the segment. Some preprocessing passes are made which operate locally, to reduce complexity. Firstly for any 3 collinear points the middle point is removed. Secondly when a corner of 1 pixel in width or height is encountered, the corner point is removed. After this tolerance based removals are applied globally, each time looking for the point which when removed changes the segment area the least. Only concavities are removed, which is suitable in this context as it ensures no gaps between the final map objects.
+Flood fill is used to find the pixels in each segment. A simple border walk is used to find the exact pixel by pixel border. Borders are simplified with a tolerance as a proportion of the area of the segment. Some preprocessing passes are made which operate locally, to reduce complexity. Firstly for any 3 collinear points the middle point is removed. Secondly when a corner of 1 pixel in width or height is encountered, the corner point is removed. After this, tolerance based removals are applied globally, each time looking for the point which when removed changes the segment area the least. Only concavities are removed, which is suitable in this context as it ensures no gaps between the final map objects.
 
 The colour of segments are used as labels to generate map objects. Map objects have borders and a type (wall, floor etc.). For each object its border is triangulated. This uses a fairly simple approach of cycling around the border looking for valid triangles (counter-clockwise, not intersecting the border's edges, and not containing another border point). A valid triangle is added to the result. The polygons left over from removing this triangle are themselves triangulated recursively to find the remaining triangles. 
 
@@ -216,6 +253,8 @@ Segmentation accuracy was tested with Hamming distance, comparing against a manu
 
 A better solution would treat the pencil filling stage (which acts on non-wall) as a closing operation rather than just a dilation.
 
+Segmentation took roughly 3 minutes, and the pencil filling passes (with downscaling of 4) took 32 seconds. If the original image is $W*H$ in size, and each side is scaled down by a parameter $S$, the pencil filling has complexity $O({W*H}/{S^3})$. This is because the image size is reduced by $S^2$, and the pencil gaps decrease in size by $S$ so fewer passes are required. Indeed the pencil filling runs much faster after scaling down by 4 (without scaling it took 38 minutes!), although I wouldn't scale down much further than this.
+
 \subsection{Text Recognition}
 
 The commonly described EAST + Tesseract method detects 90\% of double characters but only recognises 30\% of them due to its dependency on recognising complete words. Our method using sample template matching detects and recognises 100\% of double characters, with no false detections on other lines. For a comparison see Figure \ref{fig:texttest}.
@@ -239,17 +278,42 @@ The commonly described EAST + Tesseract method detects 90\% of double characters
         \label{fig:texttest}
 \end{figure}
 
-On the sample image in Figure \ref{fig:texttest} the EAST + Tesseract method takes just 5 seconds to complete, whereas our method takes 43 seconds. For an image $W*H$, template symbols $M*N$, and number of template rescalings $X*Y$, our method has complexity $O(W*H*M*N*X*Y)$. On A4 pages at 300 ppi, our method takes about 3-4 minutes for text recognition. Template size isn't feasible to adjust, however image size and template rescalings are. Image size can be adjusted by manual cropping after scanning. Number of template rescalings can be reduced by consistently drawing letters at similar sizes, and setting tighter bounds on their possible size.
+On the sample image in Figure \ref{fig:texttest} the EAST + Tesseract method takes just 5 seconds to complete, whereas our method takes 43 seconds. For an image $W*H$, template symbols $M*N$, and number of template rescalings $X*Y$, our method has complexity $O(W*H*M*N*X*Y)$. On A4 pages at 300 ppi, our method takes about 3-4 minutes for text recognition. Template size isn't feasible to adjust, however image size and template rescalings are. Image size can be adjusted by manual cropping after scanning. Simply downscaling the image and templates makes detection more sensitive, so parameters need to be adjusted alongside this. Number of template rescalings can be reduced by consistently drawing letters at similar sizes, and setting tighter bounds on their possible size.
+
+\subsection{Border Simplification and Triangulation}
+
+As seen in Figure \ref{fig:tri}, our triangulation method gives triangle fans for convex polygons, and suitably handles more complicated polygons. The number of vertices is low enough as a result of the border simplification, well within what the engine can handle.
+
+\begin{figure}[h]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{tri1}
+         \caption{An almost convex polygon}
+         \label{fig:tri1}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{tri2}
+         \caption{A polygon with concavities}
+         \label{fig:tri2}
+     \end{subfigure}
+        \caption{Triangulation of segments}
+        \label{fig:tri}
+\end{figure}
+
+With the $493*326$ simplified segmentation, the rest of the program (border marching, simplification, triangulation, and VMF construction) takes just 10 seconds. The scaling down done by pencil filling benefits this, as smaller segments with smaller borders are processed much faster. The global border simplification and triangulation can be $O(N^2)$, so simple optimisations like these and local border simplification do a lot to help with efficiency. For example without scaling down at pencil filling, this part of the program takes 77 seconds to complete. Without local border simplification, this part takes on the order of hours. Fortunately these local border optimisations make good assumptions about the nature of the input border (several straight lines and jagged diagonal pixel lines) to remove unnecessary points immediately.
 
 \section{Conclusion}
 
 Pencil sketches of map layouts were segmented and coloured based on text labels. Segmentation was achieved through a robust pencil finding method, and flood filling between pencil. Text recognition was achieved through template matching of hand drawn letter samples. 
 
-The segmentation game within 8.0\% of a reference segmentation, with no topology differences. The text recognition had a 100\% detection and recognition rate, with no false detections. The map produced was compilable and playable, with no errors related to brush size or shape. 
+The segmentation came within 8.0\% of a reference segmentation, with no topology differences. The text recognition had a 100\% detection and recognition rate, with no false detections. The map produced was compilable and playable, with no errors related to brush size or shape. 
 
 \section{Further Research}
 
-The approach described is a solid start to automating map creation, however there are many possible improvements.
+The approach described is a solid start to automating map creation, however there are many possible improvements. In general a C++ implementation for some of the intensive algorithms used would give a great speedup.
 
 \subsection{Text Recognition}
 
