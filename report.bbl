@@ -90,4 +90,10 @@ S.~Suzuki \emph{et~al.}, ``Topological structural analysis of digitized binary
   \url{https://docs.cupy.dev/en/stable/user\_guide/kernel.html}
 \BIBentrySTDinterwordspacing
 
+\bibitem{pu2008adaptive}
+J.~Pu, J.~Roos, A.~Y. Chin, S.~Napel, G.~D. Rubin, and D.~S. Paik, ``Adaptive
+  border marching algorithm: automatic lung segmentation on chest ct images,''
+  \emph{Computerized Medical Imaging and Graphics}, vol.~32, no.~6, pp.
+  452--462, 2008.
+
 \end{thebibliography}

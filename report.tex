@@ -264,6 +264,12 @@ As previously mentioned, the pencil gap filling stage only acts as a dilation, r
 
 The white rectangle used to cover up text can be made more precise if needed in future. We could record the detection size which produced the matched pair to get the exact height needed. A marching algorithm could be used to work outwards from the centre until the outside of the text is found.
 
+\subsection{Border Simplication and Triangulation}
+
+Currently we border march every pixel to find an exact border, then simplify it separately. Approaches exist to border march multiple pixels at a time, effectively combining these two steps into one. Pu et al. \cite{pu2008adaptive} propose adaptive border marching to dynamically choose step sizes whilst marching around a border. Step sizes are made smaller if a larger step excludes a sufficiently large concavity or protrusion. This method retains necessary details whilst reducing vertex count.
+
+Segments are currently allowed to become larger during border simplification, which overlaps brushes from different objects in the map. This is good for gameplay as there are no gaps, but it may cause unforeseen problems with the visibility algorithm or other parts of map compilation. The border simplification could be adjusted into a global algorithm, where borders share the same vertices, and removing or moving vertices applies to any segments using them in their border. So borders are perfectly joined between segments, and brushes align perfectly in the map.
+
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 

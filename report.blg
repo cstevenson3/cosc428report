@@ -14,45 +14,45 @@ Database file #1: references.bib
 Warning--missing school in yetics2019auto
 
 Done.
-You've used 13 entries,
+You've used 14 entries,
             4087 wiz_defined-function locations,
-            900 strings with 9643 characters,
-and the built_in function-call counts, 9130 in all, are:
-= -- 734
-> -- 192
-< -- 78
-+ -- 108
-- -- 31
-* -- 430
-:= -- 1395
-add.period$ -- 27
-call.type$ -- 13
-change.case$ -- 12
-chr.to.int$ -- 183
-cite$ -- 14
-duplicate$ -- 643
-empty$ -- 741
-format.name$ -- 38
-if$ -- 2108
+            907 strings with 9894 characters,
+and the built_in function-call counts, 10168 in all, are:
+= -- 818
+> -- 225
+< -- 89
++ -- 126
+- -- 37
+* -- 483
+:= -- 1542
+add.period$ -- 29
+call.type$ -- 14
+change.case$ -- 13
+chr.to.int$ -- 207
+cite$ -- 15
+duplicate$ -- 713
+empty$ -- 811
+format.name$ -- 45
+if$ -- 2350
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 113
-newline$ -- 68
-num.names$ -- 12
-pop$ -- 270
+int.to.str$ -- 14
+missing$ -- 126
+newline$ -- 71
+num.names$ -- 13
+pop$ -- 297
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 705
+skip$ -- 784
 stack$ -- 0
-substring$ -- 438
-swap$ -- 519
-text.length$ -- 17
+substring$ -- 495
+swap$ -- 585
+text.length$ -- 20
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 13
+type$ -- 14
 warning$ -- 1
-while$ -- 44
-width$ -- 15
-write$ -- 147
+while$ -- 49
+width$ -- 16
+write$ -- 158
 (There was 1 warning)
