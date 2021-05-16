@@ -31,7 +31,18 @@ This paper proposes a method to automatically generate Source game engine maps f
 
 \section{Introduction}
 
-Video games made by Valve run on the Source game engine, and share a common map editor and map file specification. Counter Strike: Global Offensive (CS:GO) is one such game, which has many past and present community-made maps for the competitive game mode. The map editor operates in 3D and is more suited to blocking in finer details. Blocking in the basic layout of the map can be time consuming, especially with complex geometry such as curves. If the process of taking a 2D layout idea and making a 3D map from it were automated, it would free up creative potential for map authors. This paper aims to automatically interpret sketched layouts to create the geometry and entities necessary to have a compilable and playable map.
+Video games made by Valve run on the Source game engine, and share a common map editor and map file specification. Counter Strike: Global Offensive (CS:GO) is one such game, which has many past and present community-made maps for the competitive game mode. The map editor operates in 3D and is more suited to blocking in finer details. Blocking in the basic layout of the map can be time consuming, especially with complex geometry such as curves. If the process of taking a 2D layout idea (See Figure \ref{fig:sketch}) and making a 3D map from it were automated, it would free up creative potential for map authors. This paper aims to automatically interpret sketched layouts to create the geometry and entities necessary to have a compilable and playable map.
+
+\begin{figure}[h]
+     \centering
+     \begin{subfigure}[b]{0.45\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{sketch}
+         \label{fig:sketchsub}
+     \end{subfigure}
+        \caption{An example sketched layout}
+        \label{fig:sketch}
+\end{figure}
 
 \section{Background}
 \subsection{Text Detection and Recognition}
