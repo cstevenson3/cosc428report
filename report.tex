@@ -4,6 +4,7 @@
 \graphicspath{ {./images/} }
 \usepackage{caption}
 \usepackage{subcaption}
+\captionsetup[subfigure]{justification=centering}
 
 \begin{document}
 
@@ -192,7 +193,7 @@ OpenCV Version: 4.5.1
 
 \subsection{Segmentation}
 
-Segmentation accuracy was tested with Hamming distance, comparing against a manual segmentation. In proportion to the size of the image, there was an 8.0\% difference between the algorithmic segmentation and the manual segmentation. For reference two different manual segmentations had a 2.6\% difference. We can visually inspect Figure \ref{fig:segtest} to see that the algorithmic segmentation thickens non-walls and thins walls, which accounts for the larger difference.
+Segmentation accuracy was tested with Hamming distance, comparing against a manual segmentation. In proportion to the size of the image, there was an 8.0\% difference between the algorithmic segmentation and the manual segmentation. For reference two different manual segmentations had a 2.6\% difference. We can visually inspect Figure \ref{fig:segtest} to see that the algorithmic segmentation thins walls (red) and thickens non-walls (other colours), which accounts for the larger difference.
 
 \begin{figure}[h]
      \centering

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  16 MAY 2021 17:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.27)  16 MAY 2021 17:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -180,20 +180,20 @@ File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
 
 -- Lines per column: 52 (exact).
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -221,7 +221,7 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
-Underfull \hbox (badness 2644) in paragraph at lines 35--36
+Underfull \hbox (badness 2644) in paragraph at lines 36--37
 []\OT1/ptm/m/n/11 Similarly Zargar et al. [[]] in-ter-pret per-spec-tive
  []
 
@@ -229,22 +229,22 @@ Underfull \hbox (badness 2644) in paragraph at lines 35--36
 
 
 ]
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 49.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 50.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <11> on input line 49.
+(Font)              <11> on input line 50.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7.69997> on input line 49.
+(Font)              <7.69997> on input line 50.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5.5> on input line 49.
+(Font)              <5.5> on input line 50.
 <./images/s1.png, id=10, 594.22pt x 400.49625pt>
 File: ./images/s1.png Graphic file (type png)
 <use ./images/s1.png>
-Package pdftex.def Info: ./images/s1.png  used on input line 69.
+Package pdftex.def Info: ./images/s1.png  used on input line 70.
 (pdftex.def)             Requested size: 123.84283pt x 83.46503pt.
 <./images/s2.png, id=12, 571.13374pt x 389.455pt>
 File: ./images/s2.png Graphic file (type png)
 <use ./images/s2.png>
-Package pdftex.def Info: ./images/s2.png  used on input line 76.
+Package pdftex.def Info: ./images/s2.png  used on input line 77.
 (pdftex.def)             Requested size: 123.84283pt x 84.44429pt.
 
 
@@ -254,87 +254,72 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <./images/t1.png, id=21, 618.31pt x 422.57875pt>
 File: ./images/t1.png Graphic file (type png)
 <use ./images/t1.png>
-Package pdftex.def Info: ./images/t1.png  used on input line 97.
+Package pdftex.def Info: ./images/t1.png  used on input line 98.
 (pdftex.def)             Requested size: 123.84283pt x 84.63676pt.
-
-Underfull \hbox (badness 1406) in paragraph at lines 98--98
-[]\OT1/ptm/m/n/10 (a) |Squared dif-fer-ence tem-
- []
-
 <./images/t2.png, id=22, 513.92pt x 374.39874pt>
 File: ./images/t2.png Graphic file (type png)
 <use ./images/t2.png>
-Package pdftex.def Info: ./images/t2.png  used on input line 104.
+Package pdftex.def Info: ./images/t2.png  used on input line 105.
 (pdftex.def)             Requested size: 123.84283pt x 90.21744pt.
 <./images/t3.png, id=23, 522.95375pt x 342.27875pt>
 File: ./images/t3.png Graphic file (type png)
 <use ./images/t3.png>
-Package pdftex.def Info: ./images/t3.png  used on input line 110.
+Package pdftex.def Info: ./images/t3.png  used on input line 111.
 (pdftex.def)             Requested size: 123.84283pt x 81.057pt.
 <./images/t4.png, id=24, 562.1pt x 425.59pt>
 File: ./images/t4.png Graphic file (type png)
 <use ./images/t4.png>
-Package pdftex.def Info: ./images/t4.png  used on input line 117.
+Package pdftex.def Info: ./images/t4.png  used on input line 118.
 (pdftex.def)             Requested size: 123.84283pt x 93.76645pt.
 <./images/l1.png, id=25, 596.2275pt x 396.48125pt>
 File: ./images/l1.png Graphic file (type png)
 <use ./images/l1.png>
-Package pdftex.def Info: ./images/l1.png  used on input line 139.
+Package pdftex.def Info: ./images/l1.png  used on input line 140.
 (pdftex.def)             Requested size: 123.84283pt x 82.34999pt.
 <./images/l2.png, id=26, 610.28pt x 420.57124pt>
 File: ./images/l2.png Graphic file (type png)
 <use ./images/l2.png>
-Package pdftex.def Info: ./images/l2.png  used on input line 146.
+Package pdftex.def Info: ./images/l2.png  used on input line 147.
 (pdftex.def)             Requested size: 123.84283pt x 85.3449pt.
-
-Underfull \hbox (badness 2443) in paragraph at lines 147--147
-[]\OT1/ptm/m/n/10 (b) |Re-plac-ing un-known re-
- []
-
 <./images/l3.png, id=27, 490.83376pt x 324.21124pt>
 File: ./images/l3.png Graphic file (type png)
 <use ./images/l3.png>
-Package pdftex.def Info: ./images/l3.png  used on input line 152.
+Package pdftex.def Info: ./images/l3.png  used on input line 153.
 (pdftex.def)             Requested size: 123.84283pt x 81.7996pt.
 <./images/l4.png, id=28, 493.845pt x 326.21875pt>
 File: ./images/l4.png Graphic file (type png)
 <use ./images/l4.png>
-Package pdftex.def Info: ./images/l4.png  used on input line 159.
+Package pdftex.def Info: ./images/l4.png  used on input line 160.
 (pdftex.def)             Requested size: 123.84283pt x 81.80336pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 160--160
-[]\OT1/ptm/m/n/10 (d) |Re-main-ing seg-ments
- []
-
-[3 <./images/t1.png> <./images/t2.png> <./images/t3.png> <./images/t4.png> <./i
-mages/l1.png> <./images/l2.png> <./images/l3.png> <./images/l4.png>]
+ [3 <./images/t1.png> <./images/t2.png> <./images/t3.png> <./images/t4.png> <./
+images/l1.png> <./images/l2.png> <./images/l3.png> <./images/l4.png>]
 <./images/manualseg.png, id=40, 494.84875pt x 327.2225pt>
 File: ./images/manualseg.png Graphic file (type png)
 <use ./images/manualseg.png>
-Package pdftex.def Info: ./images/manualseg.png  used on input line 201.
+Package pdftex.def Info: ./images/manualseg.png  used on input line 202.
 (pdftex.def)             Requested size: 118.6778pt x 78.47508pt.
 <./images/outputseg.png, id=41, 494.84875pt x 327.2225pt>
 File: ./images/outputseg.png Graphic file (type png)
 <use ./images/outputseg.png>
-Package pdftex.def Info: ./images/outputseg.png  used on input line 208.
+Package pdftex.def Info: ./images/outputseg.png  used on input line 209.
 (pdftex.def)             Requested size: 118.6778pt x 78.47508pt.
 <./images/ocrprior.png, id=42, 784.9325pt x 684.5575pt>
 File: ./images/ocrprior.png Graphic file (type png)
 <use ./images/ocrprior.png>
-Package pdftex.def Info: ./images/ocrprior.png  used on input line 226.
+Package pdftex.def Info: ./images/ocrprior.png  used on input line 227.
 (pdftex.def)             Requested size: 206.39685pt x 179.99672pt.
 <./images/textrec.png, id=43, 785.93625pt x 686.565pt>
 File: ./images/textrec.png Graphic file (type png)
 <use ./images/textrec.png>
-Package pdftex.def Info: ./images/textrec.png  used on input line 233.
+Package pdftex.def Info: ./images/textrec.png  used on input line 234.
 (pdftex.def)             Requested size: 206.39685pt x 180.2941pt.
 
-Underfull \hbox (badness 1629) in paragraph at lines 245--246
+Underfull \hbox (badness 1629) in paragraph at lines 246--247
 []\OT1/ptm/m/n/11 Pencil sketches of map lay-outs were seg-mented
  []
 
 
-Underfull \hbox (badness 2111) in paragraph at lines 245--246
+Underfull \hbox (badness 2111) in paragraph at lines 246--247
 \OT1/ptm/m/n/11 flood fill-ing be-tween pen-cil. Text recog-ni-tion was
  []
 
@@ -347,29 +332,25 @@ Underfull \hbox (badness 1527) in paragraph at lines 26--30
 \OT1/ptm/m/n/9 ni-tion with tesser-act,'' 2018. [On-line]. Avail-
  []
 
-) [6] (./report.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+) [6] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 3301 strings out of 480608
- 57386 string characters out of 5903630
+ 3302 strings out of 480608
+ 57414 string characters out of 5903630
  300248 words of memory out of 5000000
- 19209 multiletter control sequences out of 15000+600000
+ 19210 multiletter control sequences out of 15000+600000
  565796 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,42p,1155b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
-xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
-ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
-/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2020/texm
-f-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2020/texmf-dist/fo
-nts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/
-urw/times/utmri8a.pfb>
-Output written on report.pdf (6 pages, 3485270 bytes).
+ 41i,7n,42p,1155b,420s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/
+8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1
+0.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.
+pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/loc
+al/texlive/2020/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texliv
+e/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/tex
+mf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on report.pdf (6 pages, 3485304 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  40 compressed objects within 1 object stream
