@@ -23,25 +23,25 @@ Video games made by Valve run on the Source game engine, and share a common map 
 
 \section{Background}
 \subsection{Text Detection and Recognition}
-Rosebrock \cite{rosebrock2018opencv} and others detail a method of detecting text bounding boxes with EAST, and recognising words with Tesseract. EAST is capable of detecting word and line text in natural backgrounds \cite{zhou2017east}. Tesseract \cite{smith2007overview} is Google's text recognition engine which maintains uncertainty throughout the letter recognition process until words are recognised. Feeding the bounding boxes found by EAST into Tesseract is usually a robust method of recognising font text in real images.
+Rosebrock \cite{rosebrock2018opencv} and others detail a method of detecting text bounding boxes with EAST, and recognising words with Tesseract. EAST is capable of detecting word and line text in natural backgrounds \cite{zhou2017east}. Tesseract \cite{smith2007overview} is Google's text recognition engine which maintains uncertainty throughout the letter recognition process until words are recognised. Feeding the bounding boxes found by EAST into Tesseract is usually a robust method of recognising font text in real images. However the training is based on words and computer fonts, so it may fail on handwritten letters.
 
-Methods exist for recognising handwritten characters from different people. Pal et al. \cite{pal2010handwritten} skeletonize characters and use neural networks to recognise characters. This method operates on images of single characters.
+Methods exist for recognising handwritten characters from different people. Pal et al. \cite{pal2010handwritten} skeletonize characters and use neural networks to recognise characters. This method operates on images of single characters, limiting it to situations where bounding boxes have already been established.
 
-General shape similarity methods may be applied, such as those found in Skiena's book \cite{skiena2020algorithm}. Hamming distance of two shapes is how much they don't overlap in area when placed on top of each other. Hausdorff distance focusses on the place where 2 shapes differ the most, measuring the furthest distance you can be from one shape if you lie on the furthest point in the other shape. Skeleton comparison reduces shapes to their core structure, then compares topology and length/angle features.
+General shape similarity methods may be applied, such as those found in Skiena's book \cite{skiena2020algorithm}. Hamming distance of two shapes is how much they don't overlap in area when placed on top of each other. This fails to account for scale, shift, skew, and rotation. Hausdorff distance focusses on the place where 2 shapes differ the most, measuring the furthest distance you can be from one shape if you lie on the furthest point in the other shape. Skeleton comparison reduces shapes to their core structure, then compares topology and length/angle features.
 
 \subsection{Sketch Interpretation}
 
-Naya et al. \cite{naya2002direct} recognise the need for allowing users to sketch designs before converting them into computer models. Their proposal shows how sketched lines can be interpreted within certain tolerances to give digital representations. 
+Naya et al. \cite{naya2002direct} recognise the need for allowing users to sketch designs before converting them into computer models. Their proposal shows how sketched lines can be interpreted within certain tolerances to give digital representations. However it only works for straight lines.
 
-Similarly Zargar et al. \cite{zargar2019introducing} interpret perspective sketches to generate 3D models.
+Similarly Zargar et al. \cite{zargar2019introducing} interpret perspective sketches to generate 3D models. Again it only works for straight lines.
 
-Yetiş et al. \cite{yetics2019auto} observe that freeform sketches generally rely on human experience to resolve ambiguities when interpreting their meaning. Also, discontinuities and irregularity in lines can cause imprecise models. They attempt to use deep learning in the 2D to 3D conversion, and it gets the basic outline of architectural sketches correct.
+Yetiş et al. \cite{yetics2019auto} observe that freeform sketches generally rely on human experience to resolve ambiguities when interpreting their meaning. Also, discontinuities and irregularity in lines can cause imprecise models. They attempt to use deep learning in the 2D to 3D conversion, and it gets the basic outline of architectural sketches correct. It is limited to the features it has been trained on.
 
 \subsection{Polygon Simplifcation}
 
 Polygons sourced from real life data (such as a photo scan) can have more points representing them than practically necessary. Polygon simplification adds, removes or modifies vertices to produce a similar enough polygon with much fewer vertices.
 
-The Douglas-Peucker algorithm \cite{douglas1973algorithms} for polygon simplification is additive. It begins with 2 points of the original polygon, and adds other points from the original polygon which are sufficiently far from the current approximation. Once every non-added point is sufficiently close to the approximation, it terminates.
+The Douglas-Peucker algorithm \cite{douglas1973algorithms} for polygon simplification is additive. It begins with 2 points of the original polygon, and adds other points from the original polygon which are sufficiently far from the current approximation. Once every non-added point is sufficiently close to the approximation, it terminates. The worst case scenario is inefficient when an approximation polygon has almost the same number of vertices as the original (when the original polygon is complicated).
 
 Other techniques subtract points from low area or large angle triangles along the polygon.
 
@@ -257,7 +257,7 @@ Segmentation took roughly 3 minutes, and the pencil filling passes (with downsca
 
 \subsection{Text Recognition}
 
-The commonly described EAST + Tesseract method detects 90\% of double characters but only recognises 30\% of them due to its dependency on recognising complete words. Our method using sample template matching detects and recognises 100\% of double characters, with no false detections on other lines. For a comparison see Figure \ref{fig:texttest}.
+The commonly described EAST + Tesseract method detects 90\% of double characters but only recognises 30\% of them due to its dependency on recognising complete words. Our method using sample template matching detects and recognises 100\% of double characters, with no false detections on other lines. With this method not all letters are usable as some letters detect each other. For a comparison of methods see Figure \ref{fig:texttest}.
 
 \begin{figure}[h]
      \centering
@@ -303,13 +303,13 @@ As seen in Figure \ref{fig:tri}, our triangulation method gives triangle fans fo
         \label{fig:tri}
 \end{figure}
 
-With the $493*326$ simplified segmentation, the rest of the program (border marching, simplification, triangulation, and VMF construction) takes just 10 seconds. The scaling down done by pencil filling benefits this, as smaller segments with smaller borders are processed much faster. The global border simplification and triangulation can be $O(N^2)$, so simple optimisations like these and local border simplification do a lot to help with efficiency. For example without scaling down at pencil filling, this part of the program takes 77 seconds to complete. Without local border simplification, this part takes on the order of hours. Fortunately these local border optimisations make good assumptions about the nature of the input border (several straight lines and jagged diagonal pixel lines) to remove unnecessary points immediately.
+With the $493*326$ simplified segmentation, the rest of the program (border marching, simplification, triangulation, and VMF construction) takes just 10 seconds. The scaling down done by pencil filling benefits this, as smaller segments with smaller borders are processed much faster. The global border simplification and triangulation can be $O(N^2)$ (better solutions are $O(N*log(N))$, so simple optimisations like these and local border simplification do a lot to help with efficiency. For example without scaling down at pencil filling, this part of the program takes 77 seconds to complete. Without local border simplification, this part takes on the order of hours. Fortunately these local border optimisations make good assumptions about the nature of the input border (several straight lines and jagged diagonal pixel lines) to remove unnecessary points immediately.
 
 \section{Conclusion}
 
 Pencil sketches of map layouts were segmented and coloured based on text labels. Segmentation was achieved through a robust pencil finding method, and flood filling between pencil. Text recognition was achieved through template matching of hand drawn letter samples. 
 
-The segmentation came within 8.0\% of a reference segmentation, with no topology differences. The text recognition had a 100\% detection and recognition rate, with no false detections. The map produced was compilable and playable, with no errors related to brush size or shape. 
+The segmentation came within 8.0\% of a reference segmentation, with no topology differences. The text recognition had a 100\% detection and recognition rate, with no false detections. The map produced was compilable and playable, with no errors related to brush size or shape. The total time taken to generate the map was about 7 minutes, which needs to be improved to allow users to quickly iterate on their designs.
 
 \section{Further Research}
 
