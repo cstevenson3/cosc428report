@@ -256,6 +256,14 @@ At many points throughout template matching, seemingly arbitrary parameters have
 
 Performance is a key issue with template matching. GPU implementations with kernels we define based on templates, such as with CuPy \cite{cupy2015user}, could be investigated. More advanced methods such as feature descriptors could be used. Neural networks could be trained on handwritten 2 letter words for this particular application.
 
+\subsection{Segmentation}
+
+There is a small margin between the intensity of background paper and intensity of pencil. Adaptive thresholding is used currently, but we may want to know the background and pencil intensities for other uses (the white rectangle that covers up text for example). An intensity histogram could be used, looking for two peaks representing the background and pencil intensities.
+
+As previously mentioned, the pencil gap filling stage only acts as a dilation, resulting in enlarged non-walls and shrunken walls. If precise scales are needed, an erosion pass of the same size could be made after gaps are closed to fix the scales. Also the pencil filling stage has a fairly naive implementation, with one pass at a time looking in a $3*3$ region around each pixel. Typical morphology implementations could be extended to this colour and black situation, to improve performance. A kernel convolution solution may exist.
+
+The white rectangle used to cover up text can be made more precise if needed in future. We could record the detection size which produced the matched pair to get the exact height needed. A marching algorithm could be used to work outwards from the centre until the outside of the text is found.
+
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 
