@@ -268,7 +268,15 @@ The white rectangle used to cover up text can be made more precise if needed in 
 
 Currently we border march every pixel to find an exact border, then simplify it separately. Approaches exist to border march multiple pixels at a time, effectively combining these two steps into one. Pu et al. \cite{pu2008adaptive} propose adaptive border marching to dynamically choose step sizes whilst marching around a border. Step sizes are made smaller if a larger step excludes a sufficiently large concavity or protrusion. This method retains necessary details whilst reducing vertex count.
 
-Segments are currently allowed to become larger during border simplification, which overlaps brushes from different objects in the map. This is good for gameplay as there are no gaps, but it may cause unforeseen problems with the visibility algorithm or other parts of map compilation. The border simplification could be adjusted into a global algorithm, where borders share the same vertices, and removing or moving vertices applies to any segments using them in their border. So borders are perfectly joined between segments, and brushes align perfectly in the map.
+Segments are currently allowed to become larger during border simplification, which overlaps brushes from different objects in the map. This is good for gameplay as there are no gaps, but it may cause unforeseen problems with the visibility algorithm or other parts of map compilation. The border simplification could be adjusted into a global algorithm, where adjacent borders share the same vertices, and removing or moving vertices applies to any segments using them in their border. So borders end up perfectly joined between segments, and brushes align perfectly in the map.
+
+Donut topology (holes in the middle of segments) are not accounted for in the current program. As a cheap fix the outer wall has a pixel of black drawn through it to break up the donut, but internal segments are still vulnerable to the issue if a user draws an object with donut topology. An accurate fix would be to find holes in segments and record them as internal borders, simplify these borders the same as the external border, then use a triangulation algorithm which can cope with internal borders. For example Triangle by Johnathan Shewchuk \cite{shewchuk2005two}. A cheaper fix would be to detect holes in segments, then split the segment in two, and recursively fix holes in the two new segments produced, until there are no holes remaining.
+
+\subsection{Other Features}
+
+Config options such as scaling and skybox texture can be added. Some way of sketching crates should be added.
+
+CS:GO maps typically have some height variation, and even overlapping floors. A way of defining a height map through drawn elevation numbers could be added, and some way of sketching overlapping floors. Perhaps a symbol indicating where two nearby floors should be joined together could be added.
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}

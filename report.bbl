@@ -96,4 +96,11 @@ J.~Pu, J.~Roos, A.~Y. Chin, S.~Napel, G.~D. Rubin, and D.~S. Paik, ``Adaptive
   \emph{Computerized Medical Imaging and Graphics}, vol.~32, no.~6, pp.
   452--462, 2008.
 
+\bibitem{shewchuk2005two}
+\BIBentryALTinterwordspacing
+J.~Shewchuk, ``Triangle: A two-dimensional quality mesh generator and delaunay
+  triangulator,'' 2005. [Online]. Available:
+  \url{http://www.cs.cmu.edu/\~quake/triangle.html}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}
