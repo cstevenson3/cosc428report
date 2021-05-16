@@ -14,7 +14,7 @@
  \maketitle
  
 \begin{abstract}
-This paper proposes a method to automatically generate Source game engine maps from hand sketched layouts. Segmentation is achieved through adaptive thresholding and flood fill, with an 8\% difference from a reference segmentation. Text recognition is achieved through squared difference template matching, with 100\% detection and recognition and no false detections. A compilable and playable CS:GO map is generated.
+This paper proposes a method to automatically generate Source game engine maps from hand sketched layouts. Segmentation of regions inside pencil is achieved through adaptive thresholding and flood fill, with an 8\% difference from a reference segmentation. Text recognition is achieved through squared difference template matching of individual letters, with 100\% detection and recognition and no false detections. A compilable and playable CS:GO map is generated.
 \end{abstract}
 
 \section{Introduction}
@@ -342,7 +342,7 @@ Currently we border march every pixel to find an exact border, then simplify it 
 
 Segments are currently allowed to become larger during border simplification, which overlaps brushes from different objects in the map. This is good for gameplay as there are no gaps, but it may cause unforeseen problems with the visibility algorithm or other parts of map compilation. The border simplification could be adjusted into a global algorithm, where adjacent borders share the same vertices, and removing or moving vertices applies to any segments using them in their border. So borders end up perfectly joined between segments, and brushes align perfectly in the map.
 
-Donut topology (holes in the middle of segments) are not accounted for in the current program. As a cheap fix the outer wall has a pixel of black drawn through it to break up the donut, but internal segments are still vulnerable to the issue if a user draws an object with donut topology. An accurate fix would be to find holes in segments and record them as internal borders, simplify these borders the same as the external border, then use a triangulation algorithm which can cope with internal borders. For example Shewchuk's Triangle \cite{shewchuk2005two}. A cheaper fix would be to detect holes in segments, then split the segment in two, and recursively fix holes in the two new segments produced, until there are no holes remaining.
+Donut topology (holes in the middle of segments) are not accounted for in the current program. As a simple fix the outer wall has a pixel of black drawn through it to break up the donut, but internal segments are still vulnerable to the issue if a user draws an object with donut topology. An accurate fix would be to find holes in segments and record them as internal borders, simplify these borders the same as the external border, then use a triangulation algorithm which can cope with internal borders. For example Shewchuk's Triangle \cite{shewchuk2005two}. A simpler fix would be to detect holes in segments, then split the segment in two, and recursively fix holes in the two new segments produced, until there are no holes remaining.
 
 \subsection{Other Features}
 
