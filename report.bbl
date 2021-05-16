@@ -59,7 +59,7 @@ S.~H. Zargar, J.~Sadeghi, M.~Hashemi, N.~Motallebi, and A.~A. Garmaroodi,
   digital model,'' \emph{Nexus Network Journal}, pp. 1--17, 2019.
 
 \bibitem{yetics2019auto}
-G.~Yeti{\c{s}}, ``Auto-conversion from2d drawing to 3d model with deep
+G.~Yeti{\c{s}}, ``Auto-conversion from 2d drawing to 3d model with deep
   learning,'' Master's thesis, 2019.
 
 \bibitem{douglas1973algorithms}
@@ -72,6 +72,12 @@ D.~H. Douglas and T.~K. Peucker, ``Algorithms for the reduction of the number
 T.~Asano, T.~Asano, and R.~Y. Pinter, ``Polygon triangulation: Efficiency and
   minimality,'' \emph{Journal of Algorithms}, vol.~7, no.~2, pp. 221--231,
   1986.
+
+\bibitem{valve2006vmf}
+\BIBentryALTinterwordspacing
+V.~Authors, ``Valve map format,'' 2006. [Online]. Available:
+  \url{https://developer.valvesoftware.com/wiki/Valve\_Map\_Format}
+\BIBentrySTDinterwordspacing
 
 \bibitem{suzuki1985topological}
 S.~Suzuki \emph{et~al.}, ``Topological structural analysis of digitized binary

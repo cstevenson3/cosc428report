@@ -8,7 +8,7 @@
 \begin{document}
 
 \title{Automated Conversion of Sketches into Source Game Engine Maps}
-\author{Cameron Stevenson}
+\author{Cameron Stevenson\\[0.5cm]{\small Supervisor: Richard Green}}
  
  \maketitle
  
@@ -42,6 +42,10 @@ The Douglas-Peucker algorithm \cite{douglas1973algorithms} for polygon simplific
 
 \subsection{Polygon Triangulation}
 Asano et al. \cite{asano1986polygon} demonstrate how collinearity of vertices can be used to minimise triangle count beyond n-2, at the cost of time complexity. Triangulation cannot be faster than sorting. 
+
+\subsection{Valve Map Format}
+
+Valve Map Format \cite{valve2006vmf} describes the structure of an editable map file. It has a key-value and nested structure similar to JSON. Of particular interest is the brush, referred to as "solid" in this wiki. A brush is a convex 3D shape, defined by a number of sides making up its shape within them. Each side is a plane, and where these planes intersect create the vertices and edges of the brush.
 
 \section{Proposed Method}
 \subsection{Segmentation}
@@ -202,7 +206,7 @@ Segmentation accuracy was tested with Hamming distance, comparing against a manu
         \label{fig:segtest}
 \end{figure}
 
-A better solution would treat the pencil filling stage as a closing operation rather than just a dilation.
+A better solution would treat the pencil filling stage (which acts on non-wall) as a closing operation rather than just a dilation.
 
 \subsection{Text Recognition}
 
@@ -228,6 +232,12 @@ The commonly described EAST + Tesseract method detects 90\% of double characters
 \end{figure}
 
 On the sample image in Figure \ref{fig:texttest} the EAST + Tesseract method takes just 5 seconds to complete, whereas our method takes 43 seconds. For an image $W*H$, template symbols $M*N$, and number of template rescalings $X*Y$, our method has complexity $O(W*H*M*N*X*Y)$. On A4 pages at 300 ppi, our method takes about 3-4 minutes for text recognition. Template size isn't feasible to adjust, however image size and template rescalings are. Image size can be adjusted by manual cropping after scanning. Number of template rescalings can be reduced by consistently drawing letters at similar sizes, and setting tighter bounds on their possible size.
+
+\section{Conclusion}
+
+Pencil sketches of map layouts were segmented and coloured based on text labels. Segmentation was achieved through a robust pencil finding method, and flood filling between pencil. Text recognition was achieved through template matching of hand drawn letter samples. 
+
+The segmentation game within 8.0\% of a reference segmentation, with no topology differences. The text recognition had a 100\% detection and recognition rate, with no false detections. The map produced was compilable and playable, with no errors related to brush size or shape. 
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
