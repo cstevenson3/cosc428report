@@ -84,4 +84,10 @@ S.~Suzuki \emph{et~al.}, ``Topological structural analysis of digitized binary
   images by border following,'' \emph{Computer vision, graphics, and image
   processing}, vol.~30, no.~1, pp. 32--46, 1985.
 
+\bibitem{cupy2015user}
+\BIBentryALTinterwordspacing
+``User-defined kernels,'' 2015. [Online]. Available:
+  \url{https://docs.cupy.dev/en/stable/user\_guide/kernel.html}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}
